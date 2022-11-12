@@ -1,0 +1,11 @@
+---
+- name: Removes all snapshots
+  community.vmware.vmware_guest_snapshot:
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
+    datacenter: "{{ datacenter_name }}"
+    folder: "{{ folder_path }} "
+    name: "{{ vm_name }}"
+    state: remove_all
+  delegate_to: localhost
