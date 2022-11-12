@@ -6,8 +6,7 @@
     password: "{{ vmware.password }}"
     datacenter: "{{ datacenter_name }}"
     folder: "{{ folder_path }} "
-    name: "{{ vm_name }}"
+    name: "{{ ansible_hostname }}"
     state: present
     snapshot_name: "{{ snap_name }}"
-    description: "{{ snap_desc }}"
   delegate_to: localhost
