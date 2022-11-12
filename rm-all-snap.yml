@@ -6,4 +6,4 @@
       username: '{{ lookup("env", "VMWARE_USER") }}'
       password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
   roles:
-    - rm-snap
+    - rm-all-snap

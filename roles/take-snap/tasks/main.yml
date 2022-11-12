@@ -1,1 +1,13 @@
 ---
+- name: Create a snapshot
+  community.vmware.vmware_guest_snapshot:
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
+    datacenter: "{{ datacenter_name }}"
+    folder: "{{ folder_path }} "
+    name: "{{ vm_name }}"
+    state: present
+    snapshot_name: "{{ snap_name }}"
+    description: "{{ snap_desc }}"
+  delegate_to: localhost
