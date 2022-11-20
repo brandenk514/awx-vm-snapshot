@@ -4,9 +4,9 @@
 
 - name: Gather facts for a VM
   community.vmware.vmware_vm_info:
-    hostname: "{{ vcenter_hostname }}" # variable is set in extra_vars in template
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
     vm_type: vm
     vm_name: '{{ ansible_hostname | upper }}'
     validate_certs: false
@@ -15,9 +15,9 @@
 
 - name: Remove all snapshots of a VM
   community.vmware.vmware_guest_snapshot:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
     moid: "{{ vm_info.virtual_machines[0].moid }}"
     datacenter: "{{ vm_info.virtual_machines[0].datacenter }}"
     validate_certs: false
