@@ -8,7 +8,7 @@
     username: "{{ vmware.username }}"
     password: "{{ vmware.password }}"
     vm_type: vm
-    vm_name: '{{ ansible_hostname | upper }}'
+    vm_name: '{{ ansible_hostname }}'
     validate_certs: false
   delegate_to: localhost
   register: vm_info
